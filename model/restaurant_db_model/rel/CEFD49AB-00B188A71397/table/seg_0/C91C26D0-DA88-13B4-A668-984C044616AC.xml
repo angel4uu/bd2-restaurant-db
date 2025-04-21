@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C91C26D0-DA88-13B4-A668-984C044616AC" name="CATEGORIA">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>5C49BF76-7A21-6A42-1481-CD302324A7FE</importedID>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="F3BE15E6-403B-FAF0-B330-E0EA76D2DDED">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>38E20127-8F24-5EF1-73FB-2461572F66DA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="2410ED91-9C86-240A-38D3-3AEC7AC37C4E">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>CAF9BE44-0D0E-2C34-AA4E-CC0236CC53A8</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>36</dataTypeSize>
+<ownDataTypeParameters>36,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D0AF6F98-B37E-4F65-9C4C-8680D22348D6" name="CATEGORIA_PK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>327D3FCB-303F-6BD3-5730-AA7B30C14464</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3BE15E6-403B-FAF0-B330-E0EA76D2DDED"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AA102EE0-A790-64B0-F2B0-E41BFF6994D5" name="CATEGORIA_UN_NOMBRE">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>D39A1163-9099-9E3E-FB64-03EDC08D0812</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2410ED91-9C86-240A-38D3-3AEC7AC37C4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

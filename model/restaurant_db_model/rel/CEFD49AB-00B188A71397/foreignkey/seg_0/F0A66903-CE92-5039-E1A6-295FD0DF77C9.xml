@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F0A66903-CE92-5039-E1A6-295FD0DF77C9" containerWithKeyObject="81235B2E-8E7C-6B67-FB37-B5D1DEC8DCC8" localFKIndex="BE6197B4-C3A8-1830-8A7D-AC644C668496" name="PEDIDO_MESA_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>4EC8397F-30D2-EE45-2082-927714CB2CD7</importedID>
+<referredTableLongName>MESA</referredTableLongName>
+<deleteRule>SET NULL</deleteRule>
+<referredTableID>D0D72833-A0B7-0EFF-B104-093EEE810298</referredTableID>
+<keyObject>4698D8E4-BD08-933D-04AD-D339F60D3BF1</keyObject>
+<referredKeyID>4698D8E4-BD08-933D-04AD-D339F60D3BF1</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

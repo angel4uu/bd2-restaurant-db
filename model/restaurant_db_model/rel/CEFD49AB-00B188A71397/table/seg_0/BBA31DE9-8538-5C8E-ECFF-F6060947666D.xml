@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BBA31DE9-8538-5C8E-ECFF-F6060947666D" name="TRABAJADOR">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>194E9028-3440-C97B-FADE-F7383F7471DB</importedID>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="A44CC8BA-FD09-3965-E12E-B211AE4C7AD7">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>DDFC2999-7C62-EFD8-224D-44FDF8232FB4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombres" id="AEF1B306-7A1C-A159-5708-7D412CC31FBD">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>83F258DD-B317-6DF4-7047-BC2E346287A7</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellidos" id="CE75E7F7-DD7F-2C82-6A4E-A96E9E2F4DBA">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>11BEBD8C-9582-039F-F1F9-8933EDBCFD09</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="correo" id="E2809C63-4903-88E4-A2F7-7D3A52E53B71">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>F145690C-37CD-C398-E601-56FB3100911B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contrasena" id="65219581-3AE3-F157-8865-5A1D36E24C37">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>BA9D0745-52E4-0121-94AE-569BBE4BE883</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rol_id" id="FD165E2C-1114-BB5B-7629-EC12CC696A58">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>D6E985C8-10C8-38F3-6921-175B0324205A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9F7E3ED4-133C-0EF0-6205-BAB1D54B3151" referredColumn="651A93A6-261E-0C99-8F81-1A4FB164FD94"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8352A5B4-29D4-AAB7-E325-57F8C09E7A2A" name="TRABAJADOR_PK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>2D2ADEC4-69DC-0A55-10C7-E77145E7985D</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A44CC8BA-FD09-3965-E12E-B211AE4C7AD7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C5BDB91-7ED7-EC41-FF4A-482520C4C04B" name="TRABAJADOR_UN_CORREO">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>DA00E3F4-9B39-C1E3-575F-B1BF68A86091</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E2809C63-4903-88E4-A2F7-7D3A52E53B71"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="795B5595-0BB2-EA12-891A-2A09FB01F3EA" name="TRABAJADOR_ROL_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FD165E2C-1114-BB5B-7629-EC12CC696A58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="TRABAJADOR_CK_CORREO" directorySegmentName="seg_1" id="CAE208EA-EEDA-F194-2E9A-66335BF944E5">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>581CD574-E0D7-0233-B505-E812B8330A36</importedID>
+<rule><![CDATA[correo LIKE '%@%.%']]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

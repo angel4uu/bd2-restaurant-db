@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="55B94505-F16B-3CBD-9684-357A6D216818" name="PRODUCTO">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>61395951-BF9D-8F75-C998-FEA8721B0CD3</importedID>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="CDD938C1-EBBA-F06B-7077-2045C2CF1B6A">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>E4E8E318-370A-7F62-6919-D9AA52B9030E</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="4118AA62-A22D-B5E7-F2AC-307592540355">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>C6A3B1D4-3FFD-189D-B824-EA65E8B5061F</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descripción" id="3EB52F6C-948E-B65C-9624-B98F3BD2BB52">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>EBDFE9BF-8D92-A7D4-395A-BE21B04967DF</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stock" id="9FC924F8-EFA7-0FF1-D245-2E29DBA95D6A">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>6266B555-002B-E72E-4ED1-707E4C8DE794</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precio" id="945CA296-8A48-7734-619D-D0A7F7F201A7">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>0CD1FD46-7572-AFDC-8A2C-B1DB379E9F5C</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="categoria_id" id="1850609D-634D-2B2D-5E73-668464FEEB57">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>024D15D6-6AFE-15CE-7342-31B12C1E7EBB</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7D3BAE2F-42DE-BC44-8832-D813EB215A0F" referredColumn="F3BE15E6-403B-FAF0-B330-E0EA76D2DDED"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4CBA088C-BA8E-09FC-F58A-BAD5CFA7C6BE" name="PRODUCTO_PK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>78088834-B1E1-953F-D0A3-B969BA43FFD6</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CDD938C1-EBBA-F06B-7077-2045C2CF1B6A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FB1B4B2E-D5FC-F937-15BD-80B52ACAFD86" name="PRODUCTO_UN_NOMBRE">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>D5B469D3-0FCF-3152-2501-6643EE7C2F6B</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4118AA62-A22D-B5E7-F2AC-307592540355"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A777BCD3-E30C-174F-33BA-E5C50CE38AA1" name="PRODUCTO_CATEGORIA_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1850609D-634D-2B2D-5E73-668464FEEB57"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="PRODUCTO_CK_PRECIO" directorySegmentName="seg_1" id="439D51E9-5344-026F-676E-1B460AF35C00">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>CD1FD2F4-D022-0598-36B6-A2CE176FC020</importedID>
+<rule><![CDATA[precio >= 0 ]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="PRODUCTO_CK_STOCK" directorySegmentName="seg_1" id="8BDB833D-6C4A-C4E1-4864-646510F22FE5">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>D4FCBE44-AA14-B231-D80C-89848AF44433</importedID>
+<rule><![CDATA[stock >= 0]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

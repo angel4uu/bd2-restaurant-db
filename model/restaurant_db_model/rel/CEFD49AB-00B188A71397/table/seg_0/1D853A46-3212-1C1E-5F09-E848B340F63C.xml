@@ -1,0 +1,145 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1D853A46-3212-1C1E-5F09-E848B340F63C" name="PEDIDO_PRODUCTO">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>DDFD891E-F212-031E-AD2F-D9FBEF027992</importedID>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="A85FD0EC-B1A7-315C-15FE-416F7554F4FD">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>00F32129-4B79-CD5B-E5E1-D27215DCCF29</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="82800773-C9DC-6CF9-8427-346C0F88BDB1">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>A87BC185-4AB9-AB1B-0280-6B2A53BAF9DC</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<defaultValue>1</defaultValue>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="precio" id="F1A4FEE1-6D87-CF29-E0D3-F7BCA4FF5A87">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>8FDCD559-327C-9E62-02AB-4EF160964644</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="producto_id" id="49EF6735-2BAA-5829-BDB6-C030F7D44E2F">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>0577E52A-AFC7-B637-A89B-63821788C29E</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="64AD9FDD-B88E-D6EE-B05A-6FF083AD2720" referredColumn="CDD938C1-EBBA-F06B-7077-2045C2CF1B6A"/>
+</associations>
+</Column>
+<Column name="pedido_id" id="C6F5345C-283E-65EE-7949-4B4D0A744A00">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>B6FAB0AE-9CD6-D649-CC9D-2C36D2AB7BC5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CFCC2F8E-9005-3337-E193-6E333BCDFEFE" referredColumn="FF40CC0B-E042-23BD-D07A-F0473A627DE3"/>
+</associations>
+</Column>
+<Column name="notas" id="74F6003A-3E44-2529-FB10-37031420FD94">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>57676830-3B00-3978-61FF-3E1754273640</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D734C57A-C811-24C6-1557-54344F1ECC32" name="PEDIDO_PRODUCTO_PK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>6906138E-545A-686A-93A8-E68FA54CEFBB</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A85FD0EC-B1A7-315C-15FE-416F7554F4FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E46DC5FE-3546-DFFD-235E-1037E97DA27E" name="PEDIDO_PRODUCTO_PRODUCTO_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49EF6735-2BAA-5829-BDB6-C030F7D44E2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="10A67C96-5D8C-F8FB-FAAE-D0C236BC4674" name="PEDIDO_PRODUCTO_PEDIDO_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6F5345C-283E-65EE-7949-4B4D0A744A00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="PEDIDO_PRODUCTO_CK_CANTIDAD" directorySegmentName="seg_1" id="740EF65F-902D-D0E6-B236-9A09A335432B">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>CA8B6DFB-2869-AB4A-C41A-C3BB6597D5B0</importedID>
+<rule><![CDATA[cantidad>=1]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="PEDIDO_PRODUCTO_CK_PRECIO" directorySegmentName="seg_1" id="701A0648-43BA-B033-C045-E4D3D11C46BA">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>F54F6578-349B-2D16-4252-04CF96D33517</importedID>
+<rule><![CDATA[precio>=0]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

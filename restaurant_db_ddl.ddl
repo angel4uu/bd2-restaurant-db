@@ -1,0 +1,679 @@
+-- Generado por Oracle SQL Developer Data Modeler 24.3.1.351.0831
+--   en:        2025-04-20 23:24:00 PET
+--   sitio:      Oracle Database 11g
+--   tipo:      Oracle Database 11g
+
+
+
+-- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+
+-- predefined type, no DDL - XMLTYPE
+
+CREATE TABLE CATEGORIA 
+    ( 
+     id     NUMBER (5)  NOT NULL , 
+     nombre VARCHAR2 (36)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE CATEGORIA 
+    ADD CONSTRAINT CATEGORIA_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE CATEGORIA 
+    ADD CONSTRAINT CATEGORIA_UN_NOMBRE UNIQUE ( nombre ) ;
+
+CREATE TABLE FACTURA 
+    ( 
+     id          NUMBER (5)  NOT NULL , 
+     monto_final NUMBER (8,2)  NOT NULL , 
+     descuento   NUMBER (8,2) DEFAULT 0  NOT NULL , 
+     igv         NUMBER (8,2)  NOT NULL , 
+     pagado      CHAR (1) DEFAULT '0'  NOT NULL , 
+     pedido_id   NUMBER (5) 
+    ) 
+;
+
+ALTER TABLE FACTURA 
+    ADD 
+    CHECK (pagado IN ('0', '1')) 
+;
+
+ALTER TABLE FACTURA 
+    ADD CONSTRAINT FACTURA_CK_MONTO_FINAL 
+    CHECK (monto_final>=0)
+;
+
+
+ALTER TABLE FACTURA 
+    ADD CONSTRAINT FACTURA_CK_DESCUENTO 
+    CHECK (descuento>=0)
+;
+
+
+ALTER TABLE FACTURA 
+    ADD CONSTRAINT FACTURA_CK_IGV 
+    CHECK (igv>=0)
+;
+ALTER TABLE FACTURA 
+    ADD CONSTRAINT FACTURA_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE MESA 
+    ( 
+     id         NUMBER (5)  NOT NULL , 
+     numero     VARCHAR2 (10)  NOT NULL , 
+     capacidad  NUMBER (2)  NOT NULL , 
+     disponible CHAR (1) DEFAULT '1'  NOT NULL 
+    ) 
+;
+
+ALTER TABLE MESA 
+    ADD 
+    CHECK (disponible IN ('0', '1')) 
+;
+
+ALTER TABLE MESA 
+    ADD CONSTRAINT MESA_CK_CAPACIDAD 
+    CHECK (capacidad>=1)
+;
+ALTER TABLE MESA 
+    ADD CONSTRAINT MESA_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE MESA 
+    ADD CONSTRAINT MESA_UN_NUMERO UNIQUE ( numero ) ;
+
+CREATE TABLE METODO_PAGO 
+    ( 
+     id     NUMBER (5)  NOT NULL , 
+     nombre VARCHAR2 (50)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE METODO_PAGO 
+    ADD CONSTRAINT METODO_PAGO_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE METODO_PAGO 
+    ADD CONSTRAINT METODO_PAGO_UN_NOMBRE UNIQUE ( nombre ) ;
+
+CREATE TABLE OFERTA 
+    ( 
+     id            NUMBER (5)  NOT NULL , 
+     nombre        VARCHAR2 (100)  NOT NULL , 
+     precio_real   NUMBER (8,2)  NOT NULL , 
+     precio_oferta NUMBER (8,2)  NOT NULL , 
+     descuento     NUMBER (3,2)  NOT NULL , 
+     fecha_inicio  TIMESTAMP DEFAULT SYSDATE , 
+     fecha_fin     TIMESTAMP , 
+     estado        CHAR (1) DEFAULT 'I'  NOT NULL 
+    ) 
+;
+
+ALTER TABLE OFERTA 
+    ADD 
+    CHECK (estado IN ('A', 'G', 'I')) 
+;
+
+ALTER TABLE OFERTA 
+    ADD CONSTRAINT OFERTA_CK_PRECIO_REAL 
+    CHECK (precio_real>=0 )
+;
+
+
+ALTER TABLE OFERTA 
+    ADD CONSTRAINT OFERTA_CK_PRECIO_OFERTA 
+    CHECK (precio_oferta>=0 )
+;
+
+
+ALTER TABLE OFERTA 
+    ADD CONSTRAINT OFERTA_CK_DESCUENTO 
+    CHECK (descuento>=0 AND descuento<=1)
+;
+ALTER TABLE OFERTA 
+    ADD CONSTRAINT OFERTA_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE OFERTA 
+    ADD CONSTRAINT OFERTA_UN_NOMBRE UNIQUE ( nombre ) ;
+
+CREATE TABLE OFERTA_PRODUCTO 
+    ( 
+     id          NUMBER (5)  NOT NULL , 
+     cantidad    NUMBER (3) DEFAULT 1  NOT NULL , 
+     oferta_id   NUMBER (5)  NOT NULL , 
+     producto_id NUMBER (5)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE OFERTA_PRODUCTO 
+    ADD CONSTRAINT OFERTA_PRODUCTO_CK_CANTIDAD 
+    CHECK (cantidad>=1)
+;
+ALTER TABLE OFERTA_PRODUCTO 
+    ADD CONSTRAINT OFERTA_PRODUCTO_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE PAGO 
+    ( 
+     id                 NUMBER (5)  NOT NULL , 
+     numero_transaccion VARCHAR2 (50) , 
+     fecha              TIMESTAMP  NOT NULL , 
+     factura_id         NUMBER (5) , 
+     metodo_pago_id     NUMBER (5) 
+    ) 
+;
+
+ALTER TABLE PAGO 
+    ADD CONSTRAINT PAGO_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE PEDIDO 
+    ( 
+     id            NUMBER (5)  NOT NULL , 
+     total         NUMBER (8,2)  NOT NULL , 
+     entregado     CHAR (1) DEFAULT '0'  NOT NULL , 
+     fecha         TIMESTAMP  NOT NULL , 
+     mesa_id       NUMBER (5) , 
+     trabajador_id NUMBER (5) 
+    ) 
+;
+
+ALTER TABLE PEDIDO 
+    ADD 
+    CHECK (entregado IN ('0', '1')) 
+;
+
+ALTER TABLE PEDIDO 
+    ADD CONSTRAINT PEDIDO_CK_TOTAL 
+    CHECK (total>=0)
+;
+ALTER TABLE PEDIDO 
+    ADD CONSTRAINT PEDIDO_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE PEDIDO_OFERTA 
+    ( 
+     id        NUMBER (5)  NOT NULL , 
+     cantidad  NUMBER (3) DEFAULT 1  NOT NULL , 
+     precio    NUMBER (8,2)  NOT NULL , 
+     oferta_id NUMBER (5)  NOT NULL , 
+     pedido_id NUMBER (5)  NOT NULL , 
+     notas     VARCHAR2 (500) 
+    ) 
+;
+
+ALTER TABLE PEDIDO_OFERTA 
+    ADD CONSTRAINT PEDIDO_OFERTA_CK_CANTIDAD 
+    CHECK (cantidad>=1)
+;
+
+
+ALTER TABLE PEDIDO_OFERTA 
+    ADD CONSTRAINT PEDIDO_OFERTA_CK_PRECIO 
+    CHECK (precio>=0)
+;
+ALTER TABLE PEDIDO_OFERTA 
+    ADD CONSTRAINT PEDIDO_OFERTA_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE PEDIDO_PRODUCTO 
+    ( 
+     id          NUMBER (5)  NOT NULL , 
+     cantidad    NUMBER (4) DEFAULT 1  NOT NULL , 
+     precio      NUMBER (8,2)  NOT NULL , 
+     producto_id NUMBER (5)  NOT NULL , 
+     pedido_id   NUMBER (5)  NOT NULL , 
+     notas       VARCHAR2 (500) 
+    ) 
+;
+
+ALTER TABLE PEDIDO_PRODUCTO 
+    ADD CONSTRAINT PEDIDO_PRODUCTO_CK_CANTIDAD 
+    CHECK (cantidad>=1)
+;
+
+
+ALTER TABLE PEDIDO_PRODUCTO 
+    ADD CONSTRAINT PEDIDO_PRODUCTO_CK_PRECIO 
+    CHECK (precio>=0)
+;
+ALTER TABLE PEDIDO_PRODUCTO 
+    ADD CONSTRAINT PEDIDO_PRODUCTO_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE PRODUCTO 
+    ( 
+     id           NUMBER (5)  NOT NULL , 
+     nombre       VARCHAR2 (100)  NOT NULL , 
+     descripción  VARCHAR2 (500) , 
+     stock        NUMBER (4) DEFAULT 0  NOT NULL , 
+     precio       NUMBER (8,2)  NOT NULL , 
+     categoria_id NUMBER (5) 
+    ) 
+;
+
+ALTER TABLE PRODUCTO 
+    ADD CONSTRAINT PRODUCTO_CK_PRECIO 
+    CHECK (precio >= 0 )
+;
+
+
+ALTER TABLE PRODUCTO 
+    ADD CONSTRAINT PRODUCTO_CK_STOCK 
+    CHECK (stock >= 0)
+;
+ALTER TABLE PRODUCTO 
+    ADD CONSTRAINT PRODUCTO_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE PRODUCTO 
+    ADD CONSTRAINT PRODUCTO_UN_NOMBRE UNIQUE ( nombre ) ;
+
+CREATE TABLE ROL 
+    ( 
+     id     NUMBER (5)  NOT NULL , 
+     nombre VARCHAR2 (50)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE ROL 
+    ADD CONSTRAINT ROL_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE ROL 
+    ADD CONSTRAINT ROL_UN_NOMBRE UNIQUE ( nombre ) ;
+
+CREATE TABLE TRABAJADOR 
+    ( 
+     id         NUMBER (5)  NOT NULL , 
+     nombres    VARCHAR2 (50)  NOT NULL , 
+     apellidos  VARCHAR2 (50)  NOT NULL , 
+     correo     VARCHAR2 (100)  NOT NULL , 
+     contrasena VARCHAR2 (100)  NOT NULL , 
+     rol_id     NUMBER (5) 
+    ) 
+;
+
+ALTER TABLE TRABAJADOR 
+    ADD CONSTRAINT TRABAJADOR_CK_CORREO 
+    CHECK (correo LIKE '%@%.%')
+;
+ALTER TABLE TRABAJADOR 
+    ADD CONSTRAINT TRABAJADOR_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE TRABAJADOR 
+    ADD CONSTRAINT TRABAJADOR_UN_CORREO UNIQUE ( correo ) ;
+
+ALTER TABLE FACTURA 
+    ADD CONSTRAINT FACTURA_PEDIDO_FK FOREIGN KEY 
+    ( 
+     pedido_id
+    ) 
+    REFERENCES PEDIDO 
+    ( 
+     id
+    ) 
+    ON DELETE SET NULL 
+;
+
+ALTER TABLE OFERTA_PRODUCTO 
+    ADD CONSTRAINT OFERTA_PRODUCTO_OFERTA_FK FOREIGN KEY 
+    ( 
+     oferta_id
+    ) 
+    REFERENCES OFERTA 
+    ( 
+     id
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE OFERTA_PRODUCTO 
+    ADD CONSTRAINT OFERTA_PRODUCTO_PRODUCTO_FK FOREIGN KEY 
+    ( 
+     producto_id
+    ) 
+    REFERENCES PRODUCTO 
+    ( 
+     id
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE PAGO 
+    ADD CONSTRAINT PAGO_FACTURA_FK FOREIGN KEY 
+    ( 
+     factura_id
+    ) 
+    REFERENCES FACTURA 
+    ( 
+     id
+    ) 
+    ON DELETE SET NULL 
+;
+
+ALTER TABLE PAGO 
+    ADD CONSTRAINT PAGO_METODO_PAGO_FK FOREIGN KEY 
+    ( 
+     metodo_pago_id
+    ) 
+    REFERENCES METODO_PAGO 
+    ( 
+     id
+    ) 
+    ON DELETE SET NULL 
+;
+
+ALTER TABLE PEDIDO 
+    ADD CONSTRAINT PEDIDO_MESA_FK FOREIGN KEY 
+    ( 
+     mesa_id
+    ) 
+    REFERENCES MESA 
+    ( 
+     id
+    ) 
+    ON DELETE SET NULL 
+;
+
+ALTER TABLE PEDIDO_OFERTA 
+    ADD CONSTRAINT PEDIDO_OFERTA_OFERTA_FK FOREIGN KEY 
+    ( 
+     oferta_id
+    ) 
+    REFERENCES OFERTA 
+    ( 
+     id
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE PEDIDO_OFERTA 
+    ADD CONSTRAINT PEDIDO_OFERTA_PEDIDO_FK FOREIGN KEY 
+    ( 
+     pedido_id
+    ) 
+    REFERENCES PEDIDO 
+    ( 
+     id
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE PEDIDO_PRODUCTO 
+    ADD CONSTRAINT PEDIDO_PRODUCTO_PEDIDO_FK FOREIGN KEY 
+    ( 
+     pedido_id
+    ) 
+    REFERENCES PEDIDO 
+    ( 
+     id
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE PEDIDO_PRODUCTO 
+    ADD CONSTRAINT PEDIDO_PRODUCTO_PRODUCTO_FK FOREIGN KEY 
+    ( 
+     producto_id
+    ) 
+    REFERENCES PRODUCTO 
+    ( 
+     id
+    ) 
+    ON DELETE CASCADE 
+;
+
+ALTER TABLE PEDIDO 
+    ADD CONSTRAINT PEDIDO_TRABAJADOR_FK FOREIGN KEY 
+    ( 
+     trabajador_id
+    ) 
+    REFERENCES TRABAJADOR 
+    ( 
+     id
+    ) 
+    ON DELETE SET NULL 
+;
+
+ALTER TABLE PRODUCTO 
+    ADD CONSTRAINT PRODUCTO_CATEGORIA_FK FOREIGN KEY 
+    ( 
+     categoria_id
+    ) 
+    REFERENCES CATEGORIA 
+    ( 
+     id
+    ) 
+    ON DELETE SET NULL 
+;
+
+ALTER TABLE TRABAJADOR 
+    ADD CONSTRAINT TRABAJADOR_ROL_FK FOREIGN KEY 
+    ( 
+     rol_id
+    ) 
+    REFERENCES ROL 
+    ( 
+     id
+    ) 
+    ON DELETE SET NULL 
+;
+
+CREATE SEQUENCE CATEGORIA_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER CATEGORIA_id_TRG 
+BEFORE INSERT ON CATEGORIA 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := CATEGORIA_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE FACTURA_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER FACTURA_id_TRG 
+BEFORE INSERT ON FACTURA 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := FACTURA_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE MESA_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER MESA_id_TRG 
+BEFORE INSERT ON MESA 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := MESA_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE METODO_PAGO_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER METODO_PAGO_id_TRG 
+BEFORE INSERT ON METODO_PAGO 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := METODO_PAGO_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE OFERTA_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER OFERTA_id_TRG 
+BEFORE INSERT ON OFERTA 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := OFERTA_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE OFERTA_PRODUCTO_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER OFERTA_PRODUCTO_id_TRG 
+BEFORE INSERT ON OFERTA_PRODUCTO 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := OFERTA_PRODUCTO_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE PAGO_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER PAGO_id_TRG 
+BEFORE INSERT ON PAGO 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := PAGO_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE PEDIDO_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER PEDIDO_id_TRG 
+BEFORE INSERT ON PEDIDO 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := PEDIDO_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE PEDIDO_OFERTA_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER PEDIDO_OFERTA_id_TRG 
+BEFORE INSERT ON PEDIDO_OFERTA 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := PEDIDO_OFERTA_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE PEDIDO_PRODUCTO_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER PEDIDO_PRODUCTO_id_TRG 
+BEFORE INSERT ON PEDIDO_PRODUCTO 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := PEDIDO_PRODUCTO_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE PRODUCTO_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER PRODUCTO_id_TRG 
+BEFORE INSERT ON PRODUCTO 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := PRODUCTO_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE ROL_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER ROL_id_TRG 
+BEFORE INSERT ON ROL 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := ROL_id_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE TRABAJADOR_id_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER TRABAJADOR_id_TRG 
+BEFORE INSERT ON TRABAJADOR 
+FOR EACH ROW 
+WHEN (NEW.id IS NULL) 
+BEGIN 
+    :NEW.id := TRABAJADOR_id_SEQ.NEXTVAL; 
+END;
+/
+
+
+
+-- Informe de Resumen de Oracle SQL Developer Data Modeler: 
+-- 
+-- CREATE TABLE                            13
+-- CREATE INDEX                             0
+-- ALTER TABLE                             53
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                          13
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                         13
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 0

@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FBD2B5A4-2F99-4F52-D70F-E66EF37886E1" name="PAGO">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>30359BAF-A94F-C60E-4FFF-91D86689877A</importedID>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="4B0CCF25-8584-97CE-304B-E6FAED6477E5">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>AFE1D53C-5E01-C3E0-9D95-02673FDEE63B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="C868A88E-B71F-DAD6-2288-87AFFF816D9E">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>C7ABECDF-1B2E-E766-DE1E-3E7667F33FC5</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>91229484-D19C-D458-8647-333C7FFE7B60</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="factura_id" id="3C0B64C9-2645-96BA-CAF1-FAB1493B9D59">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>8BE2E264-35B4-4C88-539C-75299CAB232B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF1CF319-57AA-8950-2299-4AA90DFC95AD" referredColumn="6471B571-2425-BB14-FF82-8D483BD9A515"/>
+</associations>
+</Column>
+<Column name="metodo_pago_id" id="0A699143-9880-BBB9-5A77-EF2B8EFDE7F6">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>EC8EB819-05BC-4A7D-862F-969DFDFA8FCD</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DCE90BB7-DB4C-9646-DF40-A7E5F074E4B5" referredColumn="94155F86-2DCD-EC24-CACA-D215EC7FC4E5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E5F23250-D8C1-FA30-E57E-1B3B665779E2" name="PAGO_PK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>A4E2DFA8-28FA-1F42-E177-31C08B821103</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B0CCF25-8584-97CE-304B-E6FAED6477E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B36E034B-4E95-1F8A-7D1E-F67A0231C254" name="PAGO_METODO_PAGO_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A699143-9880-BBB9-5A77-EF2B8EFDE7F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4D2D6CDB-33EB-00FB-AEAF-57E5A473862D" name="PAGO_FACTURA_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C0B64C9-2645-96BA-CAF1-FAB1493B9D59"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

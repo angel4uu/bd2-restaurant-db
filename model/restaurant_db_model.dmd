@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="a" id="086F8B24-51AB-BA47-BECC-891B18EC9471" version="3.5">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:02:23 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>086F8B24-51AB-BA47-BECC-891B18EC9471</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="715911CE-89B7-5650-1B1D-6DF505B0EA2B">
+<designStoragePath>C:\Users\hp\Desktop\resturante_diseño</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="99E43389-4181-4747-2BFC-8D8016EF744E">
+<designStoragePath>C:\Users\hp\Desktop\restaurant_db_model</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

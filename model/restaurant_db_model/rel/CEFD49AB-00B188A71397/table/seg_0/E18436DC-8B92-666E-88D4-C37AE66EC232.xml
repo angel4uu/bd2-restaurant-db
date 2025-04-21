@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E18436DC-8B92-666E-88D4-C37AE66EC232" name="OFERTA_PRODUCTO">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>89E61D60-A55C-5C4C-0D3A-CEC33B1538A7</importedID>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="325BFEC5-E201-B7A1-199C-7B57D9FB882B">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>7019603A-85B1-1588-5C6E-96D4FC2AFB2A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cantidad" id="0B87A6D2-7179-4A37-BC26-1E39C3F7AD47">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>D5934D01-EFE0-E3B0-62EB-0053EADEF104</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<defaultValue>1</defaultValue>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="oferta_id" id="AC191DF7-8AE9-9DE3-D40E-4F497BA2F1F0">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>30124588-81E9-AA06-8FF5-0971ED365175</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D05A52E4-33A6-4FCF-3A85-73A102A0231E" referredColumn="37E654F2-CA0D-40ED-95CC-A805302F86AF"/>
+</associations>
+</Column>
+<Column name="producto_id" id="AC505005-3F40-7871-FEEA-8551EFE777B7">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>F333E52E-0CE6-93C1-C67D-046D843912D4</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D1B254C4-5B33-FD80-87E7-EA78355536C2" referredColumn="CDD938C1-EBBA-F06B-7077-2045C2CF1B6A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4B9060D3-A002-85FC-06AE-6DF4B8BF588E" name="OFERTA_PRODUCTO_PK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>A3A27C64-6507-BBB2-E2CF-7491BB255086</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="325BFEC5-E201-B7A1-199C-7B57D9FB882B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A532FEAA-CA48-DC5B-DF7C-CF39BCCABCC5" name="OFERTA_PRODUCTO_OFERTA_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC191DF7-8AE9-9DE3-D40E-4F497BA2F1F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5C501678-AA98-AA66-E6A3-E92693DDA77E" name="OFERTA_PRODUCTO_PRODUCTO_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AC505005-3F40-7871-FEEA-8551EFE777B7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="OFERTA_PRODUCTO_CK_CANTIDAD" directorySegmentName="seg_1" id="4207BDDB-868F-6C20-925D-61CB6D79D7D2">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>392DE633-6F83-9E20-73C6-37DFCCF5A231</importedID>
+<rule><![CDATA[cantidad>=1]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

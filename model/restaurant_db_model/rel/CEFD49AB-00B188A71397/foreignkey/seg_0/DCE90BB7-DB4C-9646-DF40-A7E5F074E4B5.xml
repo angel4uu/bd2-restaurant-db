@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DCE90BB7-DB4C-9646-DF40-A7E5F074E4B5" containerWithKeyObject="FBD2B5A4-2F99-4F52-D70F-E66EF37886E1" localFKIndex="B36E034B-4E95-1F8A-7D1E-F67A0231C254" name="PAGO_METODO_PAGO_FK">
+<createdBy>hp</createdBy>
+<createdTime>2025-04-21 05:03:21 UTC</createdTime>
+<ownerDesignName>a</ownerDesignName>
+<importedID>C993DE47-FF15-087A-9E2E-3241504CC58D</importedID>
+<referredTableLongName>METODO_PAGO</referredTableLongName>
+<deleteRule>SET NULL</deleteRule>
+<referredTableID>269F8784-5EBB-1D4E-4E08-ED882762673F</referredTableID>
+<keyObject>C4425816-5339-892D-4D77-8FBC1790AE47</keyObject>
+<referredKeyID>C4425816-5339-892D-4D77-8FBC1790AE47</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
