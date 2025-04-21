@@ -1,0 +1,10 @@
+nombre,descripción,stock,precio,categoria_id
+Caldo de Gallina,Sopa tradicional peruana con gallina y fideos,20,10.0,1
+Causa Rellena,Puré de papa amarilla relleno de pollo o atún,25,8.0,1
+Lomo Saltado,Salteado de carne con papas fritas y arroz,30,17.0,2
+Aji de Gallina,Pollo deshilachado en crema de ají amarillo,22,15.0,2
+Tallarines Verdes,Pasta con salsa de albahaca y queso fresco,28,14.0,2
+Suspiro a la Limena,Postre limeño con manjar blanco y merengue,18,10.0,3
+Mazamorra Morada,Postre morado hecho a base de maíz y frutas,20,8.0,3
+Jarra de Chicha Morada,Bebida refrescante hecha de maíz morado,15,12.0,4
+Jarra de Limonada,Bebida cítrica y refrescante con limón,15,10.0,4
