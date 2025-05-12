@@ -1,0 +1,15 @@
+cantidad,precio,producto_id,pedido_id,notas
+1,10.00,1,1,Caldo bien caliente
+1,8.00,2,1,sin mayonesa
+2,15.00,4,2,sin picante
+1,12.00,8,2,con hielo
+1,17.00,3,4,sin cebolla
+1,10.00,9,4,con hielo
+2,15.00,4,5,normal
+1,10.00,6,5,extra manjar
+2,14.00,5,6,poca salsa
+1,8.00,7,6,con canela
+2,12.00,8,7,fría
+1,10.00,9,7,con azúcar
+1,10.00,1,9,sin fideos
+1,8.00,7,9,templada
