@@ -1,3 +1,4 @@
+-- Top 5 productos más vendidos
 BEGIN
   FOR r IN (
     SELECT p.nombre, SUM(pp.cantidad) AS total_vendido
@@ -12,8 +13,7 @@ BEGIN
 END;
 /
 
-
-
+-- Promedio de calificaciones en una fecha específica
 DECLARE
   v_fecha_especifica DATE := TO_DATE('09/06/25', 'DD/MM/YY');
   v_promedio NUMBER;
@@ -27,6 +27,7 @@ BEGIN
 END;
 /
 
+-- Cantidad de quejas por trabajador
 BEGIN
   FOR r IN (
     SELECT t.nombres || ' ' || t.apellidos AS nombre, COUNT(q.id_queja) AS total_quejas
@@ -40,6 +41,7 @@ BEGIN
 END;
 /
 
+-- Producto más vendido por categoría
 DECLARE
 BEGIN
   FOR r IN (
@@ -62,7 +64,9 @@ BEGIN
     );
   END LOOP;
 END;
+/
 
+-- Día con mayor facturación
 DECLARE
   v_dia DATE;
   v_total NUMBER;
@@ -81,6 +85,7 @@ BEGIN
 END;
 /
 
+-- Cantidad de turnos por trabajador y mes (formato simple)
 DECLARE
 BEGIN
   FOR r IN (
@@ -97,6 +102,7 @@ BEGIN
 END;
 /
 
+-- Reporte detallado de turnos por trabajador por mes (formato tabular)
 DECLARE
     CURSOR c_reporte IS
         SELECT 
@@ -130,13 +136,6 @@ BEGIN
     END LOOP;
 END;
 /
-
-
-
-
-
-
-
 
 
 
